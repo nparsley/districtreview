@@ -1,1 +1,6 @@
 <h1>New Share</h1>
+
+<%= simple_form_for @share do |f| %>
+  <%= f.input :message %>
+  <%= f.submit "Post!" %>
+<% end %>
