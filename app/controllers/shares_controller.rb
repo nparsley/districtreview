@@ -1,5 +1,6 @@
 class SharesController < ApplicationController
-
+  before_action :authenticate_user!, only: [:new, :create]
+  
   def new
     @share = Share.new
   end
@@ -8,7 +9,7 @@ class SharesController < ApplicationController
   end
 
   def create
-    @share = Share.create(share_params)
+    @share = current_user.shares.create(share_params)
     if @share.valid?
       redirect_to root_path
     else
