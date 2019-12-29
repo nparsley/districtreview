@@ -9,7 +9,11 @@ class SharesController < ApplicationController
 
   def create
     @share = Share.create(share_params)
-    redirect_to root_path
+    if @share.valid?
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
 
