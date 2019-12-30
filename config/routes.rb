@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   root "shares#index"
   get 'shares', to: 'shares#index'
-    resources :shares, only: [:new, :create]
+    resources :shares, only: [:new, :create, :show, :edit, :update]
 end
