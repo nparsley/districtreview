@@ -1,6 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe SharesController, type: :controller do
+  describe "shares#destroy action" do
+    it "will allow a user to destroy shares" do
+      share = FactoryBot.create(:share)
+      delete :destroy, params: { id: share.id }
+      expect(response).to redirect_to root_path
+      share = Share.find_by_id(share.id)
+      expect(share).to eq nil
+    end
+
+    it "will return a 404 message if we cannot find a share with the id that is specified" do
+      delete :destroy, params: { id: 'unavailable' }
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
   describe "shares#update action" do
     it "will allow users to successfully update shares" do
       share = FactoryBot.create(:share, message: "Start")

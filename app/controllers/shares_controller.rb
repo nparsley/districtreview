@@ -1,6 +1,13 @@
 class SharesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   
+  def destroy
+    @share = Share.find_by_id(params[:id])
+    return render_not_found if @share.blank?
+    @share.destroy
+    redirect_to root_path
+  end
+
   def update
     @share = Share.find_by_id(params[:id])
     return render_not_found if @share.blank?
