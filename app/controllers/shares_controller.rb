@@ -1,9 +1,10 @@
 class SharesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   
   def destroy
     @share = Share.find_by_id(params[:id])
     return render_not_found if @share.blank?
+    return render_not_found(:forbidden) if @share.user != current_user
     @share.destroy
     redirect_to root_path
   end
@@ -11,9 +12,8 @@ class SharesController < ApplicationController
   def update
     @share = Share.find_by_id(params[:id])
     return render_not_found if @share.blank?
-
+    return render_not_found(:forbidden) if @share.user != current_user
     @share.update_attributes(share_params)
-      
     if @share.valid?
       redirect_to root_path
     else
@@ -37,9 +37,8 @@ class SharesController < ApplicationController
 
   def edit
     @share = Share.find_by_id(params[:id])
-    if @share.blank?
-      return render_not_found if @share.blank?
-    end
+    return render_not_found if @share.blank?
+    return render_not_found(:forbidden) if @share.user != current_user
   end
 
   def create
@@ -59,8 +58,8 @@ class SharesController < ApplicationController
     params.require(:share).permit(:message)
   end
 
-  def render_not_found
-    render plain: 'Not Found :(', status: :not_found
+  def render_not_found(status=:not_found)
+    render plain: "#{status.to_s.titleize} :(", status: status
   end
 
 end
