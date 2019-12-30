@@ -16,11 +16,7 @@ RSpec.describe SharesController, type: :controller do
     end
 
     it "will show the new form" do
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryBot.create(:user)
       sign_in user
 
       get :new
@@ -35,11 +31,7 @@ RSpec.describe SharesController, type: :controller do
     end
 
     it "will create a new share in our database" do
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryBot.create(:user)
       sign_in user
 
       post :create, params: { share: { message: 'Great!' } }
@@ -52,11 +44,7 @@ RSpec.describe SharesController, type: :controller do
     
 
     it "will deal with validation errors" do
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryBot.create(:user)
       sign_in user
 
       share_count = Share.count
