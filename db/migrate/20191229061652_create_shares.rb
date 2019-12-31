@@ -1,7 +1,9 @@
 class CreateShares < ActiveRecord::Migration[5.2]
   def change
     create_table :shares do |t|
-      t.text :message
+      t.string :name
+      t.text :description
+      t.string :address
       t.timestamps
     end
   end

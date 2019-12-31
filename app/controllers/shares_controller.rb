@@ -26,6 +26,7 @@ class SharesController < ApplicationController
   end
 
   def index
+    @shares = Share.all
   end
 
   def show
@@ -55,7 +56,7 @@ class SharesController < ApplicationController
 
 
   def share_params
-    params.require(:share).permit(:message)
+    params.require(:share).permit(:name, :description, :address)
   end
 
   def render_not_found(status=:not_found)

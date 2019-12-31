@@ -1,1 +1,9 @@
-<h1>SHARES</h1>
+<% @shares.each do |share| %>
+  <div>
+    <h1><%= share.name %></h1><br />
+    <i><%= share.address %></i><br />
+    <p><%= share.description %></p><br />
+  </div>
+
+  <hr />
+<% end %>
