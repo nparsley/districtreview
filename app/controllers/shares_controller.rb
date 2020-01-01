@@ -29,6 +29,10 @@ class SharesController < ApplicationController
     @shares = Share.all
   end
 
+  #def index
+    #@shares = Share.order("name").page(params[:page]).per_page(4)
+  #end
+
   def show
     @share = Share.find_by_id(params[:id])
     if @share.blank?
