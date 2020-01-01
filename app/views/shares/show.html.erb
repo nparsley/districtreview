@@ -3,6 +3,11 @@
   <i><%= @share.address %></i>
   <br/><br/>
   <p><%= @share.description %></p>
+  <div class="float-right">
+    <%= link_to 'Edit', edit_share_path(@share), class: 'btn btn-primary' %>
+    <%= link_to 'Destroy', share_path(@share), method: :delete, data: {confirm: 'Delete this?'},class: 'btn btn-danger' %>
+  </div>
+</div>
 
 <% if @share.latitude.present? && @share.longitude.present? %>
 
