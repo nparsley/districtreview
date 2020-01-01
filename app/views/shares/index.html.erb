@@ -1,6 +1,6 @@
 <% @shares.each do |share| %>
   <div class="booyah-box col-10 offset-1">
-    <h1><%= share.name %></h1><br />
+    <h1><%= link_to  share.name, share_path(share) %></h1><br />
     <i><%= share.address %></i><br />
     <p><%= share.description %></p><br />
   </div>
