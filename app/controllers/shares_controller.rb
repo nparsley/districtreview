@@ -38,6 +38,7 @@ class SharesController < ApplicationController
     if @share.blank?
       return render_not_found if @share.blank?
     end
+    @comment = Comment.new
   end
 
   def edit
