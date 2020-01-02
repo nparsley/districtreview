@@ -5,6 +5,18 @@
     <p><%= share.description %></p><br />
   </div>
 
+  <% if share.comments.present? %>
+    <div class="col-12">
+      <blockquote>
+        <% if share.comments.last.humanized_rating.present? %>
+          <b><%= share.comments.last.humanized_rating %></b> -
+        <% end %>
+        <%= share.comments.last.message %>
+        <small><%= share.comments.last.user.email %></small>
+      </blockquote>
+    </div>
+  <% end %>
+
   <hr />
 <% end %>
 
