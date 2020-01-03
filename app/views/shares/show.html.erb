@@ -3,9 +3,9 @@
   <i><%= @share.address %></i>
   <br/><br/>
   <p><%= @share.description %></p>
-  <div class="float-right">
-    <%= link_to 'Edit', edit_share_path(@share), class: 'btn btn-primary' %>
-    <%= link_to 'Destroy', share_path(@share), method: :delete, data: {confirm: 'Delete this?'},class: 'btn btn-danger' %>
+  <div class="float-inherit">
+    <%= link_to 'Edit', edit_share_path(@share), class: 'btn btn-outline-primary' %>
+    <%= link_to 'Destroy', share_path(@share), method: :delete, data: {confirm: 'Delete this?'},class: 'btn btn-outline-danger' %>
   </div>
 </div>
 
@@ -21,7 +21,7 @@
   </style>
   </head>
   <body>
-  <div id="map"></div>
+  <div id="map-canvas"></div>
   <script>
 
     function initMap() {
