@@ -99,3 +99,33 @@
   </div>
 </div>
 
+    <div class="clear"></div>
+    <hr />
+
+    <h2 class="float-left">Photos</h2>
+    <br /><br class="clear">
+    <div class="row col-10 offset-1">
+<% @share.photos.each do |photo| %>
+    <div class="col-12 col-sm-6">
+<%= image_tag photo.picture.to_s %>
+        <blockquote class="photo-display">
+          <p><% if photo.caption.present? %>
+            <%= photo.caption %></p>
+          <% end %>
+        </blockquote>
+      </div>
+    <% end %>
+</div>
+
+
+    <%= simple_form_for @photo, url: share_photos_path(@share) do |f| %>
+        <div class="modal-body">
+          <%= f.input :caption %>
+          <%= f.input :picture %>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>

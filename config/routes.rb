@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get 'shares', to: 'shares#index'
     resources :shares do
       resources :comments, only: :create
+      resources :photos, only: :create
     end
+    resources :users, only: :show
 end
