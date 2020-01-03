@@ -27,10 +27,11 @@
 
 .frosty h1 {
   font-family: "Helvetica Neue", Helvetica;
-  font-weight: 100;
-  color: #ff8080;
-  text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
-}
+  font-weight: 200;
+  font-size: 48px;
+  color: #e60000;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+ }
 
 .btn {
   border-radius: 0;
@@ -83,4 +84,25 @@ blockquote p {
   -o-background-size: cover;
   background-size: cover;
   height: 880px;
+}
+
+.sign-in {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.sign-up {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.sign-out {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: blue;
 }
