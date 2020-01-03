@@ -28,7 +28,7 @@
 .frosty h1 {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 100;
-  color: #f21b1e;
+  color: #ff8080;
   text-shadow: rgba(0, 0, 0, 0.95) 1px 1px;
 }
 
@@ -74,4 +74,13 @@ blockquote:before {
 
 blockquote p {
   display: inline;
+}
+
+.dc {
+  background: image_url('dcgameday'), no-repeat center bottom fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 880px;
 }
