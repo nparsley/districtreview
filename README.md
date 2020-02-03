@@ -20,14 +20,14 @@
 <img src='share1.PNG'>
 <img src='share2.PNG'>
 
-* Each share listed can be viewed by clicking on the name.  THe user will be sent to a new page with information, pictures, and comments about the share.
+* Each share listed can be viewed by clicking on the name.  The user will be sent to a new page with information, pictures, and comments about the share.
 * Locations are pinned and displayed on the map if the address provided is recognized.
 
 
 # USERS
 
-<img src='shareloginin.PNG'>
-<img src='usernewshare.PNG'>
+<img src='sharelogin.PNG'>
+<img src='newshare.PNG'>
 <img src='usershare.PNG'>
 
 * Users must be signed in to create a new share, or add a comment or photo for an existing share.  
