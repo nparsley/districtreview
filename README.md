@@ -13,7 +13,7 @@
 
 # SHARES
 
-<img src='share1.PNG'>
+<img src='sharehome.PNG'>
 
 * A list of all shares created by signed-in users will be displayed here.  
 
