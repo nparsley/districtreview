@@ -1,24 +1,33 @@
-# README
+# OVERVIEW
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* User-friendly app for users to share and suggest places to meet and watch local D.C. sporting events.
+*  View the app here: <a href="https://districtreview-nick-parsley.herokuapp.com/">District Review</a>
 
-Things you may want to cover:
 
-* Ruby version
+# HOME PAGE
 
-* System dependencies
+<img src='drhome.PNG'>
 
-* Configuration
+* The user will be sent to a home page with options to sign in, sign up, view shares and/or create new shares.
 
-* Database creation
 
-* Database initialization
+# SHARES
 
-* How to run the test suite
+<img src='share1.PNG'>
 
-* Services (job queues, cache servers, search engines, etc.)
+* A list of all shares created by signed-in users will be displayed here.  
 
-* Deployment instructions
+<img src='share1.PNG'>
+<img src='share2.PNG'>
 
-* ...
+* Each share listed can be viewed by clicking on the name.  THe user will be sent to a new page with information, pictures, and comments about the share.
+* Locations are pinned and displayed on the map if the address provided is recognized.
+
+
+# USERS
+
+<img src='shareloginin.PNG'>
+<img src='usernewshare.PNG'>
+<img src='usershare.PNG'>
+
+* Users must be signed in to create a new share, or add a comment or photo for an existing share.  
